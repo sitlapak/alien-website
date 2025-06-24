@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>เว็บไซต์หลัก - Old School Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #1e90ff;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .main-container {
+            background: #fffbe7;
+            border: 4px solid #000080;
+            box-shadow: 0 0 0 8px #ffcc00, 0 0 0 12px #000080;
+            border-radius: 0;
+            margin: 2em 0;
+            padding: 2em 2em;
+            width: 700px;
+        }
+        h1 {
+            color: #000080;
+            text-align: center;
+            text-shadow: 1px 1px 0 #fff, 2px 2px 0 #000080;
+            margin-bottom: 1.5em;
+        }
+        .section-title {
+            color: #000080;
+            background: #ffcc00;
+            display: inline-block;
+            padding: 0.2em 1em;
+            border: 2px solid #000080;
+            margin-bottom: 0.5em;
+            font-size: 1.1em;
+            text-transform: uppercase;
+        }
+        hr {
+            border: 0;
+            border-top: 2px dashed #000080;
+            margin: 1.5em 0;
+        }
+        .news, .characters, .scene {
+            margin-bottom: 2em;
+        }
+        ul {
+            padding-left: 1.5em;
+            text-align: left;
+        }
+        .character-list {
+            display: flex;
+            gap: 2em;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .character {
+            border: 2px solid #000080;
+            background: #fffcc0;
+            padding: 1em;
+            width: 140px;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+        .character img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 2px solid #000080;
+            background: #fff;
+            margin-bottom: 0.5em;
+        }
+        .scene-img {
+            display: block;
+            margin: 0 auto 1em auto;
+            border: 2px solid #000080;
+            background: #fff;
+            width: 90%;
+            max-width: 400px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 1em;
+            background: #ffcc00;
+            color: #000;
+            border: 2px solid #000080;
+            border-radius: 0;
+            padding: 0.5em 1.5em;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 2px 2px 0 #000080;
+        }
+        .back-link:hover {
+            background: #000080;
+            color: #fffcc0;
+        }
+        .lang-switch {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            margin-bottom: 0;
+            text-align: right;
+            z-index: 10;
+        }
+        .lang-btn {
+            background: #ffcc00;
+            color: #000080;
+            border: 2px solid #000080;
+            border-radius: 0;
+            padding: 0.3em 1em;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 0.5em;
+            box-shadow: 1px 1px 0 #000080;
+            transition: background 0.2s, color 0.2s;
+        }
+        .lang-btn.active, .lang-btn:hover {
+            background: #000080;
+            color: #fffcc0;
+        }
+        .section-link {
+            display: inline-block;
+            margin-left: 1em;
+            font-size: 0.95em;
+            color: #000080;
+            background: #ffec80;
+            border: 1px solid #000080;
+            padding: 0.1em 0.7em;
+            text-decoration: none;
+            border-radius: 0.3em;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            transition: background 0.2s, color 0.2s;
+        }
+        .section-link:hover {
+            background: #000080;
+            color: #fffcc0;
+        }
+        .main-links {
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+            margin: 2em 0 2em 0;
+        }
+        .main-link-btn {
+            background: #ffcc00;
+            color: #000080;
+            border: 2px solid #000080;
+            border-radius: 0.5em;
+            padding: 1em 2em;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 2px 2px 0 #000080;
+            transition: background 0.2s, color 0.2s;
+            display: inline-block;
+        }
+        .main-link-btn:hover {
+            background: #000080;
+            color: #fffcc0;
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <button class="lang-btn" id="btn-th">TH</button>
+        <button class="lang-btn" id="btn-en">EN</button>
+    </div>
+    <div class="main-container">
+        <h1 id="main-title">เว็บไซต์หลัก</h1>
+        <div class="main-links">
+            <a href="news.html" class="main-link-btn">NEWS</a>
+            <a href="characters.html" class="main-link-btn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Dodo_1.JPG" alt="Dodo" style="width:32px;vertical-align:middle;margin-right:0.5em;">
+                CHARACTERS
+            </a>
+            <a href="scene.html" class="main-link-btn">SCENE</a>
+        </div>
+        <div class="news">
+            <div class="section-title" id="news-title">
+                ข่าว (News)
+                <a href="news.html" class="section-link">ดูทั้งหมด</a>
+            </div>
+            <ul id="news-list">
+                <li>อัปเดตเวอร์ชันใหม่! เพิ่มตัวละครและฉากใหม่</li>
+                <li>กิจกรรมแข่งขันประจำเดือนนี้เริ่มแล้ว</li>
+                <li>ประกาศปิดปรับปรุงเซิร์ฟเวอร์ 2 ชม. คืนนี้</li>
+            </ul>
+        </div>
+        <hr>
+        <div class="characters">
+            <div class="section-title" id="char-title">
+                ตัวละคร (Characters)
+                <a href="characters.html" class="section-link">ดูทั้งหมด</a>
+            </div>
+            <div class="character-list">
+                <div class="character">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.png" alt="Hero">
+                    <div id="char-hero">Hero</div>
+                </div>
+                <div class="character">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg" alt="Mage">
+                    <div id="char-mage">Mage</div>
+                </div>
+                <div class="character">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif" alt="Knight">
+                    <div id="char-knight">Knight</div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="scene">
+            <div class="section-title" id="scene-title">
+                ฉาก (Scene)
+                <a href="scene.html" class="section-link">ดูทั้งหมด</a>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Pixel_art_forest.png" alt="Scene" class="scene-img">
+            <div id="scene-desc">ฉากป่าในตำนาน</div>
+        </div>
+        <a href="index.html" class="back-link" id="back-link">ย้อนกลับ</a>
+    </div>
+    <script>
+        const btnTH = document.getElementById('btn-th');
+        const btnEN = document.getElementById('btn-en');
+
+        function setLangMain(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem('siteLang', lang);
+            if (lang === "th") {
+                btnTH.classList.add('active');
+                btnEN.classList.remove('active');
+                document.getElementById('main-title').textContent = "เว็บไซต์หลัก";
+                document.getElementById('news-title').textContent = "ข่าว (News)";
+                document.getElementById('news-list').innerHTML = `
+                    <li>อัปเดตเวอร์ชันใหม่! เพิ่มตัวละครและฉากใหม่</li>
+                    <li>กิจกรรมแข่งขันประจำเดือนนี้เริ่มแล้ว</li>
+                    <li>ประกาศปิดปรับปรุงเซิร์ฟเวอร์ 2 ชม. คืนนี้</li>
+                `;
+                document.getElementById('char-title').textContent = "ตัวละคร (Characters)";
+                document.getElementById('char-hero').textContent = "Hero";
+                document.getElementById('char-mage').textContent = "Mage";
+                document.getElementById('char-knight').textContent = "Knight";
+                document.getElementById('scene-title').textContent = "ฉาก (Scene)";
+                document.getElementById('scene-desc').textContent = "ฉากป่าในตำนาน";
+                document.getElementById('back-link').textContent = "ย้อนกลับ";
+            } else if (lang === "en") {
+                btnEN.classList.add('active');
+                btnTH.classList.remove('active');
+                document.getElementById('main-title').textContent = "Main Website";
+                document.getElementById('news-title').textContent = "News";
+                document.getElementById('news-list').innerHTML = `
+                    <li>New version update! New characters and scenes added.</li>
+                    <li>This month's competition event has started.</li>
+                    <li>Server maintenance announcement: 2 hours tonight.</li>
+                `;
+                document.getElementById('char-title').textContent = "Characters";
+                document.getElementById('char-hero').textContent = "Hero";
+                document.getElementById('char-mage').textContent = "Mage";
+                document.getElementById('char-knight').textContent = "Knight";
+                document.getElementById('scene-title').textContent = "Scene";
+                document.getElementById('scene-desc').textContent = "Legendary Forest Scene";
+                document.getElementById('back-link').textContent = "Back";
+            }
+        }
+
+        btnTH.onclick = function() { setLangMain("th"); };
+        btnEN.onclick = function() { setLangMain("en"); };
+
+        // โหลดค่าภาษาเดิมถ้ามี
+        const savedLang = localStorage.getItem('siteLang') || "th";
+        setLangMain(savedLang);
+    </script>
+</body>
+</html>

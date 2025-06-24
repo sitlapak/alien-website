@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>CHARACTERS</title>
+    <style>
+        body {
+            background: #1e90ff;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: #fffbe7;
+            border: 4px solid #000080;
+            box-shadow: 0 0 0 8px #ffcc00, 0 0 0 12px #000080;
+            margin: 3em auto;
+            padding: 2em 2em;
+            width: 500px;
+            text-align: center;
+        }
+        h1 {
+            color: #000080;
+            text-transform: uppercase;
+            margin-bottom: 1em;
+            text-shadow: 1px 1px 0 #fff, 2px 2px 0 #000080;
+        }
+        .character-list {
+            display: flex;
+            gap: 2em;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2em;
+        }
+        .character {
+            border: 2px solid #000080;
+            background: #fffcc0;
+            padding: 1em;
+            width: 140px;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+        .character img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 2px solid #000080;
+            background: #fff;
+            margin-bottom: 0.5em;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 1em;
+            background: #ffcc00;
+            color: #000;
+            border: 2px solid #000080;
+            border-radius: 0;
+            padding: 0.5em 1.5em;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 2px 2px 0 #000080;
+        }
+        .back-link:hover {
+            background: #000080;
+            color: #fffcc0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CHARACTERS</h1>
+        <div class="character-list">
+            <div class="character">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Dodo_1.JPG" alt="Dodo Hero">
+                <div>Dodo Hero</div>
+            </div>
+            <div class="character">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Dodo_side.jpg" alt="Dodo Mage">
+                <div>Dodo Mage</div>
+            </div>
+            <div class="character">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Dodo_head.jpg" alt="Dodo Knight">
+                <div>Dodo Knight</div>
+            </div>
+        </div>
+        <a href="main.html" class="back-link">ย้อนกลับ</a>
+    </div>
+</body>
+</html>

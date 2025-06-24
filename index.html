@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #1e90ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .container {
+            background: #fffbe7;
+            border: 4px solid #000080;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 2em 2em;
+            text-align: center;
+            width: 400px;
+        }
+        h1 {
+            color: #000080;
+            font-size: 2em;
+            margin-bottom: 1em;
+            letter-spacing: 0.05em;
+            text-shadow: 1px 1px 0 #fff, 2px 2px 0 #000080;
+        }
+        .btn-main {
+            background: #ffcc00;
+            color: #000;
+            border: 2px solid #000080;
+            border-radius: 0;
+            padding: 0.8em 2em;
+            font-size: 1.1em;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1.5em;
+            box-shadow: 2px 2px 0 #000080;
+            transition: background 0.2s, color 0.2s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-main:hover {
+            background: #000080;
+            color: #fffcc0;
+        }
+        hr {
+            border: 0;
+            border-top: 2px dashed #000080;
+            margin: 2em 0;
+        }
+        /* Optional: add a retro pixel border effect */
+        .container {
+            box-shadow: 0 0 0 8px #ffcc00, 0 0 0 12px #000080;
+        }
+        .lang-switch {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            margin-bottom: 0;
+            text-align: right;
+            z-index: 10;
+        }
+        .lang-btn {
+            background: #ffcc00;
+            color: #000080;
+            border: 2px solid #000080;
+            border-radius: 0;
+            padding: 0.3em 1em;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 0.5em;
+            box-shadow: 1px 1px 0 #000080;
+            transition: background 0.2s, color 0.2s;
+        }
+        .lang-btn.active, .lang-btn:hover {
+            background: #000080;
+            color: #fffcc0;
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-switch">
+        <button class="lang-btn active" id="btn-th">TH</button>
+        <button class="lang-btn" id="btn-en">EN</button>
+    </div>
+    <div class="container">
+        <h1 id="main-title">ยินดีต้อนรับสู่หน้าเกม</h1>
+        <hr>
+        <a href="main.html" class="btn-main" id="main-btn">เข้าสู่เว็บไซต์หลัก</a>
+    </div>
+    <script>
+        const btnTH = document.getElementById('btn-th');
+        const btnEN = document.getElementById('btn-en');
+        const mainTitle = document.getElementById('main-title');
+        const mainBtn = document.getElementById('main-btn');
+
+        function setLang(lang) {
+            localStorage.setItem('siteLang', lang);
+            document.documentElement.lang = lang;
+            if (lang === "th") {
+                btnTH.classList.add('active');
+                btnEN.classList.remove('active');
+                mainTitle.textContent = "ยินดีต้อนรับสู่หน้าเกม";
+                mainBtn.textContent = "เข้าสู่เว็บไซต์หลัก";
+            } else if (lang === "en") {
+                btnEN.classList.add('active');
+                btnTH.classList.remove('active');
+                mainTitle.textContent = "Welcome to the Game Page";
+                mainBtn.textContent = "Enter Main Website";
+            }
+        }
+
+        btnTH.onclick = function() { setLang("th"); };
+        btnEN.onclick = function() { setLang("en"); };
+
+        // โหลดค่าภาษาเดิมถ้ามี
+        const savedLang = localStorage.getItem('siteLang') || "th";
+        setLang(savedLang);
+    </script>
+</body>
+</html>
+
